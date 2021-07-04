@@ -4,6 +4,10 @@
 This project solves the sliding puzzle through breadth-first search (bfs), iterative deepening depth-first search (iddfs), A-star (A*) algorithm and iterative deepening A-star (IDA*) algorithm. The various algorithms can be seen as improvements over the previous ones as listed above, being able to solve more complex problems than the preceding one.
 
 ## Code
+<p align="center">
+  <img src="https://github.com/Riope/Sliding-Puzzle/blob/main/visualization.jpg?raw=true">
+</p>
+
 * Each of the four algorithm files can be independently run. They would check for the solvability of the state and find the minimum number of moves to solve the given state along with the time taken to run that algorithm. They also print the states through each move taken to reach the goal state.
 * All these functions implement a unique way of marking the visited states which puts a unique code to each state. This code is calculated for the initial state and is henceforth updated from the parent state. These codes are then stored in a set to quickly find if the state has already been checked or not. This saves time (from the conventional way of storing states in a set) on the cases where an already considered state is being checked for its presence in the set.
 
