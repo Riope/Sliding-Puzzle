@@ -9,7 +9,18 @@ This project solves the sliding puzzle through breadth-first search (bfs), itera
 </p>
 
 * Each of the four algorithm files can be independently run. They would check for the solvability of the state and find the minimum number of moves to solve the given state along with the time taken to run that algorithm. They also print the states through each move taken to reach the goal state.
-* All these functions implement a unique way of marking the visited states which puts a unique code to each state. This code is calculated for the initial state and is henceforth updated from the parent state. These codes are then stored in a set to quickly find if the state has already been checked or not. This saves time (from the conventional way of storing states in a set) on the cases where an already considered state is being checked for its presence in the set.
+* All these functions mark the visited states using unique code for each state. These codes are then stored in a set to quickly find if the state has already been checked or not. This saves time (from the conventional way of storing states in a set) on the cases where an already considered state is being checked for its presence in the set.
+
+### stage.java
+The objects of this class would represent the states or stages in the puzzle.
+  * This class contains the relevant data for the state.
+  * It contains general functions related to the states.
+
+### Solvability.java
+This file contains the function that checks the solvability of the given state and its auxillary functions which are used by it.
+
+### SlidingPuzzle.java
+This file binds and uses all the functions together to show the comparison between the time taken by each of the algorithm. It also prints the minimum number of moves and each state through the moves taken by the IDA* algorithm to reach the goal state. It prints the moves taken by the other algorithm in a new file created in the same folder as the rest of the files.
 
 ### bfs.java
 This file contains the code to solve the puzzle through breadth-first search. It is the first approach that one thinks of while solving such a problem of minimum number of steps. This has a problem of storage as it can run out of memory space in states with higher minimum number of moves to solve.
@@ -22,14 +33,3 @@ This file contains the code to solve the puzzle through A-star algorithm. This a
 
 ### IDAstar.java
 This file contains the code to solve the puzzle through iterative deepening A-star algorithm. This algorithm uses both iddfs and A* (through using heuristic). Iddfs takes lesser memory but greater time, so to reduce the time taken, the heuristic is used to determine the levels to which the dfs would run in each iteration of the iddfs. This reduces the time taken in A* and is the best method among the four used in this project.
-
-### stage.java
-The objects of this class would represent the states or stages in the puzzle.
-  * This class contains the relevant data for the state.
-  * It contains general functions related to the states.
-
-### Solvability.java
-This file contains the function that checks the solvability of the given state and its auxillary functions which are used by it.
-
-### SlidingPuzzle.java
-This file binds and uses all the functions together to show the comparison between the time taken by each of the algorithm. It also prints the minimum number of moves and each state through the moves taken by the IDA* algorithm to reach the goal state. It prints the moves taken by the other algorithm in a new file created in the same folder as the rest of the files.
